@@ -23,16 +23,18 @@ const EventsRsvp = async () => {
           {events.map((event) => (
             <div
               key={event.id}
-              className="border-b border-default-100 p-2 flex gap-2"
+              className="border-b border-default-100 p-2 flex gap-2 justify-between"
             >
-              <Link href={`/dashboard/events/${event.id}`}>
-                <span>{event.name}</span>
-              </Link>
-              <span>
-                <Chip size="sm" color={statusColors[event.status]}>
-                  {event.status}
-                </Chip>
-              </span>
+              <div className="flex gap-4">
+                <Link href={`/dashboard/events/${event.id}`}>
+                  <span>{event.name}</span>
+                </Link>
+                <span>
+                  <Chip size="sm" color={statusColors[event.status]}>
+                    {event.status}
+                  </Chip>
+                </span>
+              </div>
               <span>
                 <Chip size="sm" variant="faded">
                   {event.name}
